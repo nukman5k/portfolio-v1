@@ -1,9 +1,16 @@
 import React from 'react'
-import 
+import { About, Footer, Header, Skills, Testimonials, Work } from './container';
 
 const App = () => {
     return (
-        <div>NDA</div>
+        <div className='app'>
+            <Header />
+            <About />
+            <Work />
+            <Skills />
+            <Testimonials />
+            <Footer />
+        </div>
     );
 }
 
