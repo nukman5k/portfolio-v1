@@ -3,7 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 
 import { images } from '../../constants';
-import './Header';
+import './Header.scss';
 
 const scaleVariants = {
   whileInView: {
@@ -30,7 +30,7 @@ const Header = () => {
             <span>👋</span>
             <div style={{ marginLeft: 20 }}>
               <p className='p-text'>Hello, I am</p>
-              <h1 className='head-text'>Nda Kunene</h1>
+              <h1 className='head-text'>NdaKunene</h1>
             </div>
           </div>
           <div className='tag-cmp app__flex'>
@@ -61,13 +61,13 @@ const Header = () => {
         whileInView={scaleVariants.whileInView}
         className="app__header-circles"
       >
-        {[images.flutter, images.redux, images.sass].map((circle, index) => (
+        {[images.javascript, images.react, images.node].map((circle, index) => (
           <div className='circle-cmp app__flex' key={`circle-${index}`}>
             <img src={circle} alt="cirlce" />
           </div>
         ))}
       </motion.div>
-    </div>
+    </div >
   )
 }
 
