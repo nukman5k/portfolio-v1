@@ -40,12 +40,16 @@ const About = () => {
 
       <div className='app__profiles'>
         {abouts.map((about, index) => (
-      <motion.div
-      
-      >
-
-      </motion.div>
-    ))}
+          <motion.div
+            whileInView={{ opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.5, type: 'tween' }}
+            className='app__profile-item'
+            key={about.title + index}
+          >
+            <img src={about.imgUrl} alt={about.title} />
+          </motion.div>
+        ))}
 
       </div>
     </>
