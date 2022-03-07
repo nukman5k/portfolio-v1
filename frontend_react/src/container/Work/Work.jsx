@@ -49,11 +49,17 @@ const Work = () => {
         {filterWork.map((work, index) => (
           <div className='app__work-item app__flex' key={index}>
             <div className='app__work-img app__flex'>
-              <img src={urlFor(work.imgUrl)} />
+              <img src={urlFor(work.imgUrl)} alt={work.name} />
+
+              <motion.div
+                whileHover={{ opacity: [0, 1] }}
+                transition={{ duration: 0.25, ease: 'easeOut', staggerChildren: 0.5 }} //stagger means elements will show one after the other
+              >
+
+              </motion.div>
             </div>
           </div>
         ))}
-
       </motion.div>
     </>
   )
