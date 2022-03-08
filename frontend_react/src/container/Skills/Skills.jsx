@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ReactToolTip } from 'react-tooltip';
 
@@ -42,6 +42,11 @@ const Skills = () => {
             >
               <div className='app__flex' style={{ backgroundColor: skill.bgColor }}>
                 <img scr={urlFor(skill.icon)} alt={skill.name} />
+
+
+                {/* <img scr={`${urlFor(skill.icon).options.baseUrl}/${urlFor(skill.icon).options.source.asset._ref}`} alt={skill.name} /> */}
+
+                {console.log(urlFor(skill.icon))}
               </div>
               <p className='p-text'>{skill.name}</p>
             </motion.div>
