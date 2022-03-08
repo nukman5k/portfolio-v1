@@ -26,6 +26,18 @@ const Work = () => {
 
 
   const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    setAnimateCard([{ y: 100, opacity: 0 }]); //this triggers the shuffle animation of the cards
+
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+
+      if (item === 'All') {
+        setFilterWork(works)
+      } else {
+        setFilterWork(works.filter(work => work.tags.includes(item)))
+      }
+    }, 500);
 
   }
 
