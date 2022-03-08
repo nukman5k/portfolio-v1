@@ -4,6 +4,11 @@ import { Navbar } from './components';
 import './App.scss';
 
 const App = () => {
+
+var firstVallue = 1;
+
+console.log(firstVallue);
+
     return (
         <div className='app'>
             <Navbar />
@@ -11,7 +16,8 @@ const App = () => {
             <About />
             <Work />
             <Skills />
-            <Testimonials />
+            {/* <Testimonials /> */}
+            
             <Footer />
         </div>
     );

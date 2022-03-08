@@ -22,8 +22,7 @@ const Work = () => {
         setWorks(data);
         setFilterWork(data);
       })
-  }, [])
-
+  }, []);
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -38,7 +37,6 @@ const Work = () => {
         setFilterWork(works.filter(work => work.tags.includes(item)))
       }
     }, 500);
-
   }
 
   return (
