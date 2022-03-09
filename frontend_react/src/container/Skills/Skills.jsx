@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ReactTooltip } from 'react-tooltip';
+import ReactTooltip from 'react-tooltip';
 
 import { AppWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
@@ -13,13 +13,13 @@ const Skills = () => {
 
   useEffect(() => {
 
-    const experienceQuery = '*[_type == "experience"]';
+    const experienceQuery = '*[_type == "experiences"]';
     const skillsQuery = '*[_type == "skills"]';
 
-    // client.fetch(experienceQuery)
-    //   .then((data) => {
-    //     setExperience(data);
-    //   });
+    client.fetch(experienceQuery)
+      .then((data) => {
+        setExperience(data);
+      });
 
     client.fetch(skillsQuery)
       .then((data) => {
@@ -45,6 +45,7 @@ const Skills = () => {
                 <img scr={urlFor(skill.icon)} alt={skill.name} />
 
                 {console.log(urlFor(skill.icon))}
+
               </div>
               <p className='p-text'>{skill.name}</p>
             </motion.div>
@@ -52,7 +53,7 @@ const Skills = () => {
         </motion.div>
 
         <motion.div className='app__skills-exp'>
-          {experience.work.map((work) => (
+          {experience.map((work) => (
             <>
               <motion.div
                 whileInView={{ opacity: [0, 1] }}

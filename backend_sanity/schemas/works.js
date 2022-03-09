@@ -1,3 +1,5 @@
+
+//Schema for Projects
 export default {
     name: 'works',
     title: 'Works',
