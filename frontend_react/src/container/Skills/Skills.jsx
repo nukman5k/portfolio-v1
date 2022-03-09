@@ -42,10 +42,7 @@ const Skills = () => {
               key={skill.name}
             >
               <div className='app__flex' style={{ backgroundColor: skill.bgColor }}>
-                <img scr={urlFor(skill.icon)} alt={skill.name} />
-
-                {console.log(urlFor(skill.icon))}
-
+                <img src={urlFor(skill.icon)} alt={skill.name} />
               </div>
               <p className='p-text'>{skill.name}</p>
             </motion.div>
@@ -53,7 +50,7 @@ const Skills = () => {
         </motion.div>
 
         <motion.div className='app__skills-exp'>
-          {experience.map((work) => (
+          {/* {experience.work.map((work) => (
             <>
               <motion.div
                 whileInView={{ opacity: [0, 1] }}
@@ -75,7 +72,7 @@ const Skills = () => {
                 {work.desc}
               </ReactTooltip>
             </>
-          ))}
+          ))} */}
         </motion.div>
       </div>
     </>
