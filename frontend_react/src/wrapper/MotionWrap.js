@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const MotionWrap = (Component, className) => function HOC() {
     return (
-        <div></div>
+        <div>NDA</div>
     )
 }
 
