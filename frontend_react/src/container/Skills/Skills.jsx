@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ReactToolTip } from 'react-tooltip';
+import { ReactTooltip } from 'react-tooltip';
 
 import { AppWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
@@ -16,15 +16,16 @@ const Skills = () => {
     const experienceQuery = '*[_type == "experience"]';
     const skillsQuery = '*[_type == "skills"]';
 
-    client.fetch(experienceQuery)
-      .then((data) => {
-        setExperience(data);
-      });
+    // client.fetch(experienceQuery)
+    //   .then((data) => {
+    //     setExperience(data);
+    //   });
 
     client.fetch(skillsQuery)
       .then((data) => {
         setSkills(data);
       });
+
   }, []);
 
   return (
@@ -43,13 +44,36 @@ const Skills = () => {
               <div className='app__flex' style={{ backgroundColor: skill.bgColor }}>
                 <img scr={urlFor(skill.icon)} alt={skill.name} />
 
-
-                {/* <img scr={`${urlFor(skill.icon).options.baseUrl}/${urlFor(skill.icon).options.source.asset._ref}`} alt={skill.name} /> */}
-
                 {console.log(urlFor(skill.icon))}
               </div>
               <p className='p-text'>{skill.name}</p>
             </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div className='app__skills-exp'>
+          {experience.work.map((work) => (
+            <>
+              <motion.div
+                whileInView={{ opacity: [0, 1] }}
+                transition={{ duration: 0.5 }}
+                className='app__skills-exp-work'
+                data-tip
+                data-for={work.name}
+                key={work.name}
+              >
+                <h4 className='bold-text'>{work.name}</h4>
+                <p className='p-text'>{work.company}</p>
+              </motion.div>
+              <ReactTooltip
+                id={work.name}
+                effect="solid"
+                arrowColor="#fff"
+                className="skills-tooltip"
+              >
+                {work.desc}
+              </ReactTooltip>
+            </>
           ))}
         </motion.div>
       </div>
