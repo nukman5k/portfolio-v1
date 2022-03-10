@@ -1,4 +1,6 @@
 import email from '../assets/email.png';
+import email2 from '../assets/email2.png';
+
 import mobile from '../assets/mobile.png';
 import api from '../assets/api.png';
 import cpp from '../assets/cpp.png';
@@ -26,6 +28,7 @@ import about04 from '../assets/about04.png';
 import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
+import logo2 from '../assets/logo2.png';
 
 import adidas from '../assets/adidas.png';
 import amazon from '../assets/amazon.png';
@@ -37,6 +40,7 @@ import spotify from '../assets/spotify.png';
 
 export default {
     email,
+    email2,
     mobile,
     api,
     cpp,
@@ -62,6 +66,7 @@ export default {
     profile,
     circle,
     logo,
+    logo2,
     adidas,
     amazon,
     asus,

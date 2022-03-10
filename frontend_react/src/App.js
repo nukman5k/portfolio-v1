@@ -5,9 +5,9 @@ import './App.scss';
 
 const App = () => {
 
-var firstVallue = 1;
+    var firstVallue = 1;
 
-console.log(firstVallue);
+    console.log(firstVallue);
 
     return (
         <div className='app'>
@@ -17,7 +17,6 @@ console.log(firstVallue);
             <Work />
             <Skills />
             {/* <Testimonials /> */}
-            
             <Footer />
         </div>
     );
