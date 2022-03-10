@@ -5,10 +5,6 @@ import './App.scss';
 
 const App = () => {
 
-    var firstVallue = 1;
-
-    console.log(firstVallue);
-
     return (
         <div className='app'>
             <Navbar />
