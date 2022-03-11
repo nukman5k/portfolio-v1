@@ -55,8 +55,10 @@ const Skills = () => {
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
               </div>
+
               <motion.div className="app__skills-exp-works">
-                {experience.works.map((work) => (
+
+                {experience.works.map((work) => (  //ERROR STARTS HERE
                   <>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
@@ -70,7 +72,7 @@ const Skills = () => {
                       <p className="p-text">{work.company}</p>
                     </motion.div>
                     <ReactTooltip
-                      id={`$(work.name)_`}
+                      id={work.name}
                       effect="solid"
                       arrowColor="#fff"
                       className="skills-tooltip"
@@ -78,7 +80,8 @@ const Skills = () => {
                       {work.desc}
                     </ReactTooltip>
                   </>
-                ))}
+                ))}       //ERROR ENDS HERE
+
               </motion.div>
             </motion.div>
           ))}
