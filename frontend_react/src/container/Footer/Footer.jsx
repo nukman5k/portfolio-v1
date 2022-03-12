@@ -10,7 +10,7 @@ const Footer = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // const { username, email, message } = formData;
+  const { name, email, message } = formData;
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -19,7 +19,7 @@ const Footer = () => {
 
   const handleSubmit = () => {
     console.log(formData);
-    
+
     setLoading(true);
 
     const contact = {
@@ -54,11 +54,10 @@ const Footer = () => {
       {!isFormSubmitted ? (
         <div className="app__footer-form app__flex">
           <div className="app__flex">
-            <input className="p-text" type="text" placeholder="Your Name" name="name" onChange={handleChangeInput} />
-            {/* value={formData.name} value={formData.email}  */}
+            <input className="p-text" type="text" placeholder="Your Name" name="name" value={formData.name} onChange={handleChangeInput} />
           </div>
           <div className="app__flex">
-            <input className="p-text" type="email" placeholder="Your Email" name="email" onChange={handleChangeInput} />
+            <input className="p-text" type="email" placeholder="Your Email" name="email" value={formData.email} onChange={handleChangeInput} />
           </div>
           <div>
             <textarea
