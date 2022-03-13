@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ReactTooltip from 'react-tooltip';
-// import { uuid } from 'uuidv4';
 import shortid from 'shortid';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
@@ -36,7 +35,7 @@ const Skills = () => {
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className="app__skills-item app__flex"
-              key={`${shortid.generate()}${skill.name}`}
+              key={skill.name}
             >
               <div
                 className="app__flex"
@@ -57,22 +56,20 @@ const Skills = () => {
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
               </div>
-
               <motion.div className="app__skills-exp-works">
                 {experience.works.map((work) => (
-                  <div key={shortid.generate()}>
+                  <>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
                       className="app__skills-exp-work"
-                      key={`${shortid.generate()}${work.name}`}
                       data-tip
                       data-for={work.name}
+                      key={work.name}
                     >
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">{work.company}</p>
                     </motion.div>
-
                     <ReactTooltip
                       id={work.name}
                       effect="solid"
@@ -81,10 +78,9 @@ const Skills = () => {
                     >
                       {work.desc}
                     </ReactTooltip>
-                  </div>
+                  </>
                 ))}
               </motion.div>
-
             </motion.div>
           ))}
         </div>
